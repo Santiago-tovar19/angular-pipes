@@ -1,0 +1,45 @@
+<h1>Pipes Numericos</h1>
+<p>Pipes incluidos en angular - usualmente en el commonModule</p>
+
+<div class="col display-flex">
+  <div class="col-4">
+    <div>
+      <h2>i18nSelect Pipe</h2>
+      <p>
+        saludos {{ name }} es un placer
+        {{ gender | i18nSelect : invitationMap }}
+      </p>
+      <button (click)="changeClient()">Cambiar persona</button>
+    </div>
+    <div>
+      <h2>i18nPlural Pipe</h2>
+      <p>
+        actualmente tenemos
+        {{ clients.length | i18nPlural : clientsMap }}
+      </p>
+      <button (click)="deleteClient()">Borrar cliente</button>
+    </div>
+    <div>
+      <h2>i18nslice Pipe</h2>
+      <p>{{ clients | slice : 0 : 2 }}</p>
+    </div>
+    <div>
+      <h2>i18njson Pipe</h2>
+      <p>{{ person | json }}</p>
+    </div>
+    <div>
+      <h2>i18nKeyValue Pipe</h2>
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          {{ item.key }}: {{ item | json }}
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>i18nAsyncPipe Pipe</h2>
+      <p>{{ myObservableTimer | async }}</p>
+      <p>{{ myObservableTimer | json }}</p>
+      <p>{{ myPromise | async }}</p>
+    </div>
+  </div>
+</div>
